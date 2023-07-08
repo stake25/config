@@ -1,0 +1,22 @@
+# start tmux automagically
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  exec tmux
+fi
+
+# basics
+alias vim='lvim'
+alias ll='ls -la'
+alias profile='vim ~/.zsh_profile'
+alias sourceit='source ~/.zshrc'
+alias tmuxconf='vim ~/.config/tmux/tmux.conf'
+
+# git
+alias lg='lazygit'
+
+# firefox
+alias search='firefox --search'
+
+# navigation and code
+alias dev='cd ~/development'
+alias notes='/notes'
+
