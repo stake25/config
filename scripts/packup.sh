@@ -15,5 +15,6 @@ cp -r $lvimPath ./configs/lvim/
 
 mkdir -p ./configs/zsh/
 rm -rf ./configs/zsh/*
-cp "${HOME}/.zshrc" "${HOME}/.zsh_profile" ./configs/zsh/
+cp "${HOME}/.zshrc" ./configs/zsh/zshrc
+cp "${HOME}/.zsh_profile" ./configs/zsh/zsh_profile
 
