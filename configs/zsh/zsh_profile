@@ -1,10 +1,13 @@
 alias vim='lvim'
 alias profile="vim ~/.zsh_profile"
 alias sourceit='source ~/.zshrc'
+alias lconfig='vim ~/.config/lvim/'
 
 alias ll='ls -la'
 
+# navigation
 alias dev='cd ~/development'
+alias notes='vim ~/notes'
 
 alias lg='lazygit'
 
