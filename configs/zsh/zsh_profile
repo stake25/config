@@ -1,0 +1,10 @@
+alias vim='lvim'
+alias profile="vim ~/.zsh_profile"
+alias sourceit='source ~/.zshrc'
+
+alias ll='ls -la'
+
+alias dev='cd ~/development'
+
+alias lg='lazygit'
+
