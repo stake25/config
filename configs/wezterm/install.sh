@@ -1,3 +1,5 @@
 #!/bin/sh
+pwd
+ls
 
-cp configs/wezterm.lua ~/h.wezterm.lua
+cp configs/wezterm/.wezterm.lua ~/.wezterm.lua
