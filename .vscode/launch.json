@@ -9,6 +9,12 @@
             "type": "f5anything",
             "request": "launch",
             "command": "./configs/wezterm/install.sh"
+        },
+        {
+            "name": "vscode extensions install",
+            "type": "f5anything",
+            "request": "launch",
+            "command": "./configs/vscode/extensions.sh"
         }
     ]
 }
