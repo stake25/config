@@ -5,6 +5,7 @@ local act = wezterm.action
 -- Appearance
 config.color_scheme = "Monokai Soda" -- or Macchiato, Frappe, Latte
 config.window_background_opacity = 0.95
+config.window_close_confirmation = "NeverPrompt"
 
 -- Keybinds
 config.leader = { key = "Space", mods = "CTRL", timeout_milliseconds = 2000 }
