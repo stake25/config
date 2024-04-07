@@ -1,5 +1,7 @@
 alias vim='nvim'
 alias profile="nvim ~/.zsh_profile"
+alias config="cd ~/development/config/; nvim ."
+alias nconfig="cd .config/nvim/; nvim ."
 alias src='. ~/.zshrc'
 
 alias ll='ls -la'
