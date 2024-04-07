@@ -1,6 +1,6 @@
 alias vim='nvim'
 alias profile="nvim ~/.zsh_profile"
-alias src='source ~/.zshrc'
+alias src='. ~/.zshrc'
 
 alias ll='ls -la'
 
