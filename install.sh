@@ -1,15 +1,17 @@
 #!/bin/bash
 
-# Check if the script is given at least one argument
-if [ $# -eq 0 ]; then
-	echo "Usage: $0 [name]"
-	exit 1
-fi
+# install zsh config
+cp ./configs/zsh/zshrc "${HOME}/.zshrc"
+cp ./configs/zsh/zsh_profile "${HOME}/.zsh_profile" 
 
-# Store the first argument in a variable
-name=$1
+# install neovim config
+cp -r ./configs/neovim/nvim/ "${HOME}/.config/nvim/"
 
-# run the command based on the argument
-if [[ "$1" == "all" ]]; then
-	exec './configs/zsh/install.sh'
-fi
+# install tmux config
+cp ./configs/tmux/tmux.conf "${HOME}/.tmux.conf"
+
+# install alacritty config
+cp -r ./configs/alacritty "${HOME}/.config/"
+
+# packup wezterm config
+cp -r ./configs/wezterm/wezterm.lua "${HOME}/.wezterm.lua"

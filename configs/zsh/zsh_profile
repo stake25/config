@@ -1,14 +1,16 @@
-alias vim='nvim'
-alias profile="nvim ~/.zsh_profile"
-alias config="cd ~/development/config/; nvim ."
-alias nconfig="cd .config/nvim/; nvim ."
-alias src='. ~/.zshrc'
+alias profile='nvim ~/.zsh_profile'
+alias rc='nvim ~/.zshrc'
+alias src='source ~/.zshrc'
 
-alias ll='ls -la'
+alias nconfig='cd ~/.config/nvim && code .'
+alias tconfig='nvim ~/.tmux.conf'
+alias tsrc='tmux source-file ~/.tmux.conf'
+alias aconfig='cd ~/.config/alacritty && nvim .'
 
-# navigation
-alias dev='cd ~/development'
-alias notes='vim ~/notes'
-
+alias ll='ls -la --color=auto'
 alias lg='lazygit'
 
+alias dev='cd ~/development/'
+alias rpcy='cd ~/development/RisePortalCypress/'
+alias testColor='curl -s https://gist.githubusercontent.com/lifepillar/09a44b8cf0f9397465614e622979107f/raw/24-bit-color.sh >24-bit-color.sh
+bash 24-bit-color.sh'
