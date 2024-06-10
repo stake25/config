@@ -17,9 +17,9 @@ rm -rf ./configs/tmux/*
 cp "${HOME}/.tmux.conf" ./configs/tmux/tmux.conf
 
 # packup alacritty config
-# mkdir -p ./configs/alacritty
-# rm -rf ./configs/alacritty/
-# cp -r "${HOME}/.config/alacritty" ./configs/
+mkdir -p ./configs/alacritty
+rm -rf ./configs/alacritty/
+cp -r "${HOME}/.config/alacritty" ./configs/
 
 # packup wezterm config
 mkdir -p ./configs/wezterm/

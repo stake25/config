@@ -1,0 +1,102 @@
+{
+    "workbench.sideBar.location": "right",
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "workbench.iconTheme": "easy-icons",
+    "workbench.startupEditor": "none",
+    "vim.easymotion": true,
+    "vim.useSystemClipboard": true,
+    "vim.visualModeKeyBindings": [
+        {
+            "before": ["<C-l>"],
+            "commands": ["workbench.action.nextEditor"]
+        },
+        {
+            "before": ["<C-h>"],
+            "commands": ["workbench.action.previousEditor"]
+        }
+    ],
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "k"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "vim.insertModeKeyBindingsNonRecursive": [],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<C-l>"],
+            "commands": ["workbench.action.nextEditor"]
+        },
+        {
+            "before": ["<C-h>"],
+            "commands": ["workbench.action.previousEditor"]
+        },
+        {
+            "before": [
+                "<space>"
+            ],
+            "commands": [
+                "vspacecode.space"
+            ]
+        },
+        {
+            "before": [
+                ","
+            ],
+            "commands": [
+                "vspacecode.space",
+                {
+                    "command": "whichkey.triggerKey",
+                    "args": "m"
+                }
+            ]
+        }
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<space>"
+            ],
+            "commands": [
+                "vspacecode.space"
+            ]
+        },
+        {
+            "before": [
+                ","
+            ],
+            "commands": [
+                "vspacecode.space",
+                {
+                    "command": "whichkey.triggerKey",
+                    "args": "m"
+                }
+            ]
+        },
+        {
+            "before": [
+                ">"
+            ],
+            "commands": [
+                "editor.action.indentLines"
+            ]
+        },
+        {
+            "before": [
+                "<"
+            ],
+            "commands": [
+                "editor.action.outdentLines"
+            ]
+        }
+    ],
+    "vspacecode.bindingOverrides": [
+        {
+           "keys": "s.f",
+           "name": "Find file",
+           "type": "command",
+           "command": "workbench.action.findInFiles"
+        }
+    ],
+    "window.menuBarVisibility": "toggle"
+}
