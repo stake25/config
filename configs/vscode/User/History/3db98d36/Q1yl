@@ -1,0 +1,31 @@
+# auto shell config-----------------------------------------------------------------------------------------------------------------------------
+# add starship
+eval "$(starship init zsh)"
+
+# add neovim
+export PATH="$PATH:/opt/nvim-linux64/bin"
+
+# aliases --------------------------------------------------------------------------------------------------------------------------------------
+alias profile='nvim ~/.zsh_profile'
+alias rc='nvim ~/.zshrc'
+alias src='source ~/.zshrc'
+
+alias nconfig='cd ~/.config/nvim && nvim .'
+alias tconfig='nvim ~/.tmux.conf'
+alias tsrc='tmux source-file ~/.tmux.conf'
+alias aconfig='cd ~/.config/alacritty && nvim .'
+
+alias lg='lazygit'
+
+alias testColor='curl -s https://gist.githubusercontent.com/lifepillar/09a44b8cf0f9397465614e622979107f/raw/24-bit-color.sh >24-bit-color.sh
+bash 24-bit-color.sh'
+
+# functions -----------------------------------------------------------------------------------------------------------------------------------
+function nav() {
+  case $1 in
+    rpcy) cd ~/development/RisePortalCypress/;;
+    dev) cd ~/development/;;
+    rdpi) cd ~/development/russdayPI/;;
+    *) echo "invalid directory";;
+  esac
+}

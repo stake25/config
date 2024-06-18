@@ -1,0 +1,11 @@
+build(activeRoutesPage): edit of tests to clear out linting errors
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Committer: James Stakebake <stake@pop-os.repsrv.com>
+#
+# On branch js-activeRoutesPage-part2
+# Changes to be committed:
+#	modified:   cypress/e2e/specs/regression/closingRoutesErrors/TC_BreakBlockErr.cy.ts
+#	modified:   cypress/pages/closingRoutesPage.ts
+#

@@ -1,0 +1,20 @@
+SELECT SEQUENCE, INFOPRO_DIV, ROUTE_DATE, ROUTE_NUM, REV_DIST_CODE
+                 FROM ROUTES.ACTIVE_ROUTE_DETAILS as ard
+                          INNER JOIN ACTIVE_ROUTE_HEADER as arh
+                                     ON arh.PK_ACTIVE_ROUTE_HEADER_ID = ard.XPK_ACTIVE_ROUTE_HEADER_ID
+                          INNER JOIN ROUTE_CLOSE_ACTIVITY as rca
+                                     ON ard.PK_ACTIVE_ROUTE_DETAILS_ID = rca.XPK_ACTIVE_ROUTE_DETAILS_ID
+                                         AND INFOPRO_DIV IN $division
+                                         AND DAY (
+                     ROUTE_DATE) = DAY (CURRENT_DATE)+1
+                     AND MONTH (ROUTE_DATE) = MONTH (CURRENT_DATE)
+                     AND ROUTE_FORMAT IN ('R'
+                    , 'C'
+                    , 'I')
+                     AND ROUTE_DELAY_FLAG IS NULL
+                     AND arh.TRUCK_NUM IS NOT NULL
+                     AND arh.EMP1_DETAILS IS NOT NULL
+                     AND rca.START_TIME IS NOT NULL
+                     AND arh.STATUS = 'UPDATE_COMPLETE'
+                 GROUP BY ROUTE_DATE
+                     LIMIT 1

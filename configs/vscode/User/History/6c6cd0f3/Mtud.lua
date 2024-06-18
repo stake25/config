@@ -1,0 +1,5 @@
+require("keybinds")
+require("settings")
+require("options")
+require("autocommands")
+-- require("lua/plugins")
