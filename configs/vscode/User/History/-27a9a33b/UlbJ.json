@@ -1,9 +1,0 @@
-{
-  "home": "/operations",
-  "map": "",
-  "sps": "",
-  "cpRoutes": "/operations/create-print-routes",
-  "activeRoutes": "/operations/active-routes",
-  "routeClosing": "/operations/route-closing",
-  "downtimeTracker": "/operations/downtime-tracker"
-}
