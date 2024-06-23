@@ -1,0 +1,54 @@
+# Monokai color palette variables
+# background=#272822
+# foreground=#F8F8F2
+# comment=#75715E
+# red=#F92672
+# orange=#FD971F
+# yellow=#E6DB74
+# green=#A6E22E
+# blue=#66D9EF
+# purple=#AE81FF
+# cyan=#A1EFE4
+# white=#F8F8F0
+
+# Global properties
+separator=true
+separator_block_width=15
+markup=pango
+separator_symbol="<"
+
+# IPv4 Address
+[ipv4]
+command=ip -4 addr show scope global | awk '/inet / {print $2}' | cut -d/ -f1 | awk -v bg="#000000" -v fg="#AE81FF" '{print "<span background=\"" bg "\" foreground=\"" fg "\">" $0 "</span>"}'
+interval=10
+label=IPv4:
+color=#AE81FF  # Text color for label
+
+# Time
+[time]
+command=date '+%Y-%m-%d %I:%M:%S %p' | awk -v bg="#000000" -v fg="#A6E22E" '{print "<span background=\"" bg "\" foreground=\"" fg "\">" $0 "</span>"}'
+interval=1
+color=$green  # Text color for label
+background=#000000  # Background color for label
+
+# Battery
+[battery]
+command=~/.config/i3blocks/scripts/battery.sh | awk -v bg="#000000" -v fg="#66D9EF" '{print "<span background=\"" bg "\" foreground=\"" fg "\">" $0 "</span>"}'
+interval=30
+color=#66D9EF  # Text color for label
+
+# Volume
+[volume]
+command=pactl list sinks | grep 'Base Volume: ' | awk -v bg="#000000" -v fg="#E6DB74" '{print "<span background=\"" bg "\" foreground=\"" fg "\">" $5 "</span>"}'
+interval=1
+label=  
+color=#E6DB74  # Text color for label
+background=#000000  # Background color for label
+
+# Disk usage
+[disk]
+command=df -h / | awk 'NR==2 {print $5}' | awk -v bg="#000000" -v fg="#FD971F" '{print "<span background=\"" bg "\" foreground=\"" fg "\">" $0 "</span>"}'
+interval=60
+label=Disk:
+color=#FD971F  # Text color for label
+
