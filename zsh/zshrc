@@ -13,8 +13,4 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 # Start tmux automatically if not already inside a tmux session
-if [ -z "$TMUX" ]; then
-    tmux
-fi
-
 source ~/.zsh_profile

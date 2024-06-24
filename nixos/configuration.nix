@@ -149,7 +149,6 @@
     gparted
 
     # terminal packages
-    tmux
     wezterm
     neovim
     glances 
@@ -164,6 +163,9 @@
     brave
     signal-desktop
     teams-for-linux
+
+    # gaming
+    discord
   ];
 
   # Fonts
