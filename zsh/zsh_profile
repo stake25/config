@@ -1,0 +1,16 @@
+# system aliases
+alias rc='nvim ~/.zshrc'
+alias profile='nvim ~/.zsh_profile'
+alias src='source ~/.zshrc'
+alias ll='ls -la'
+
+# navigation
+alias dev='cd ~/development'
+alias nixos='cd /etc/nixos'
+alias configs='cd ~/development/config'
+
+# program aliases
+alias n='nvim'
+alias lg='lazygit'
+alias tsrc='tmux source-file ~/.tmux.conf'
+alias tconfig='nvim ~/.tmux.conf'
