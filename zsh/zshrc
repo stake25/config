@@ -4,7 +4,7 @@ HISTSIZE=1000
 SAVEHIST=1000
 setopt beep extendedglob
 unsetopt autocd notify
-bindkey -v
+bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/stake/.zshrc'
@@ -12,5 +12,17 @@ zstyle :compinstall filename '/home/stake/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
-# Start tmux automatically if not already inside a tmux session
+# Start starship if not already started
+eval "$(starship init zsh)"
+
+# add neovim to the path
+export PATH="$PATH:/opt/nvim-linux64/bin"
+
+# source my profile
 source ~/.zsh_profile
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
