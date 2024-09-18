@@ -6,7 +6,7 @@ alias ll='ls -la --color=auto'
 alias ls='ls --color=auto'
 
 # navigation
-alias dev='cd ~/development'
+alias dev='cd ~/development; ranger'
 alias nixos='cd /etc/nixos'
 alias configs='cd ~/development/config'
 
@@ -14,8 +14,8 @@ alias configs='cd ~/development/config'
 alias n='nvim'
 alias nconfig='cd ~/.config/nvim/ && nvim .'
 alias lg='lazygit'
-alias tsrc='tmux source-file ~/.tmux.conf'
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+alias notes='code ~/Nextcloud/Notes'
 
 # ssh aliases
 alias homelab='ssh 192.168.1.102'
