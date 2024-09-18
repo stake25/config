@@ -1,7 +1,5 @@
 #!/bin/bash
 
-rm ./zshrc ./zsh_profile
-
-cp ~/.zshrc ./zshrc 
-cp ~/.zsh_profile ./zsh_profile
+cp -f ~/.zshrc ./zshrc 
+cp -f ~/.zsh_profile ./zsh_profile
 
