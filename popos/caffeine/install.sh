@@ -1,13 +1,13 @@
 #!/bin/bash
 
-# Check if Steam is installed
+# Check if Caffeine is installed
 if ! command -v caffeine &> /dev/null; then
-    echo "Caffeine is not installed. Installing Steam..."
+    echo "Caffeine is not installed. Installing Caffeine..."
     
     sudo apt update
     
     # Install Steam
-    sudo apt install -y steam
+    sudo apt install -y caffeine
 
     echo "Caffeine has been installed."
 else
