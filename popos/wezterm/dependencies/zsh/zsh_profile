@@ -1,6 +1,6 @@
 # system aliases
-alias rc='nvim ~/.zshrc'
-alias profile='nvim ~/.zsh_profile'
+alias rc='vim ~/.zshrc'
+alias profile='vim ~/.zsh_profile'
 alias src='source ~/.zshrc'
 alias ll='ls -la --color=auto'
 alias ls='ls --color=auto'

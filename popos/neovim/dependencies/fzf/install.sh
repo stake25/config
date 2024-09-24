@@ -7,8 +7,8 @@ else
   echo "fzf is not installed. Proceeding with installation..."
 
   # Update package list and install fzf
-  sudo apt update
-  sudo apt install -y fzf
+  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+  ~/.fzf/install
 
   echo "fzf installation completed."
 fi
