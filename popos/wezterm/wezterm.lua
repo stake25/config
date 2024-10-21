@@ -22,11 +22,15 @@ config.keys = {
 	-- Create a new tab (Ctrl+Space, c)
 	{ key = "c", mods = "LEADER", action = wezterm.action({ SpawnTab = "DefaultDomain" }) },
 
-	-- Split horizontal (Ctrl+Space, %)
-	{ key = "5", mods = "LEADER|SHIFT", action = wezterm.action({ SplitHorizontal = { domain = "CurrentPaneDomain" } }) },
+	-- Split horizontal (Ctrl+Space, h)
+	{
+		key = "h",
+		mods = "LEADER",
+		action = wezterm.action({ SplitHorizontal = { domain = "CurrentPaneDomain" } }),
+	},
 
-	-- Split vertical (Ctrl+Space, ")
-	{ key = '"', mods = "LEADER|SHIFT", action = wezterm.action({ SplitVertical = { domain = "CurrentPaneDomain" } }) },
+	-- Split vertical (Ctrl+Space, j)
+	{ key = "j", mods = "LEADER", action = wezterm.action({ SplitVertical = { domain = "CurrentPaneDomain" } }) },
 
 	-- Close pane (Ctrl+Space, x)
 	{ key = "x", mods = "LEADER", action = wezterm.action({ CloseCurrentPane = { confirm = true } }) },
