@@ -1,0 +1,63 @@
+" Turn on syntax highlighting
+syntax on
+
+" Enable line numbers
+set number
+
+" Enable relative line numbers
+set relativenumber
+
+" Show matching parentheses and brackets
+set showmatch
+
+" Highlight the current line
+set cursorline
+
+" Set indentation to 4 spaces, expand tabs into spaces
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+" Enable mouse support
+set mouse=a
+
+" Enable clipboard to use the system clipboard (use 'unnamedplus' for Neovim)
+set clipboard=unnamed
+
+" Display the line and column number of the cursor
+set ruler
+
+" Case-insensitive search unless uppercase is used
+set ignorecase
+set smartcase
+
+" Incremental search
+set incsearch
+
+" Use 256 colors
+set t_Co=256
+
+" Disable audible bell and use visual bell instead
+set noerrorbells
+set visualbell
+
+" Faster redraw, useful for large files
+set lazyredraw
+
+" Map 'jk' to escape from insert mode
+inoremap jk <Esc>
+
+" Allow backspace to work as expected in insert mode
+set backspace=indent,eol,start
+
+" Better split window behavior
+set splitbelow
+set splitright
+
+" Set status line to always show
+set laststatus=2
+
+" Enable auto-indenting
+set autoindent
+set smartindent
+
