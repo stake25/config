@@ -6,7 +6,11 @@ local config = wezterm.config_builder()
 
 -- This is where you actually apply your config choices
 config.window_close_confirmation = "NeverPrompt"
-config.font = wezterm.font("FiraCode Nerd Font")
+config.font = wezterm.font_with_fallback({
+        "Fira Code Nerd Font",
+        "DejaVu Sans",
+        "Noto Sans Symbols"
+    })
 
 config.hide_tab_bar_if_only_one_tab = true
 config.window_background_opacity = 0.98
