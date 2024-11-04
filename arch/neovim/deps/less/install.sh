@@ -6,7 +6,7 @@ then
     echo "less not found, installing via pacman..."
     
     # Install less using pacman
-    sudo pacman -S less
+    sudo pacman -S less --noconfirm
 else
     echo "less is already installed."
 fi
