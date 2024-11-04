@@ -6,7 +6,7 @@ then
     echo "fzf not found, installing via pacman..."
     
     # Install fzf using pacman
-    sudo pacman -S fzf
+    sudo pacman -S fzf --noconfirm
 else
     echo "fzf is already installed."
 fi

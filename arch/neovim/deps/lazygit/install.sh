@@ -6,7 +6,7 @@ then
     echo "LazyGit not found, installing via pacman..."
     
     # Install lazygit using pacman
-    sudo pacman -S lazygit
+    sudo pacman -S lazygit --noconfirm
 else
     echo "LazyGit is already installed."
 fi
