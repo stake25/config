@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cp -rf ~/.scripts ./scripts/
+cp -r ~/.scripts/* ./scripts/
 
