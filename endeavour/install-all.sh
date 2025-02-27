@@ -3,6 +3,10 @@
 ############################################
 # Prerequisites for installation
 
+# get the absolute path to this files directory
+CURR_PATH="$(dirname "$(readlink -f "$0")")"
+echo "Current path: $CURR_PATH"
+
 # enable multilib repository
 echo "Enabling multilib repository..."
 sudo cp /etc/pacman.conf /etc/pacman.conf.bak # Backup the current pacman.conf
@@ -15,6 +19,7 @@ sudo pacman -Sy # Update the package database
 
 # List of pacman packages to install
 pacmanPackages=(
+  "discord"
   "dosfstools"
   "docker"
   "docker-compose"
@@ -53,6 +58,10 @@ flatpakPackages=(
   "com.spotify.Client"
 )
 
+customPackages=(
+  "rust"
+)
+
 ############################################
 # add packages for work
 pacmanPackages+=(
@@ -68,61 +77,40 @@ flatpakPackages+=(
   "us.zoom.Zoom"
 )
 
-############################################
-# Install typical packages
+customPackages+=(
+  "repsrv-vpn"
+)
 
-# Save the current directory
-original_dir=$(pwd)
+############################################
+# Install packages
 
 # create logs directory
-mkdir -p "$original_dir/logs"
+mkdir -p "$CURR_PATH/logs"
 
 # Iterate over the packages and run the pacman-install.sh script
 for package in "${pacmanPackages[@]}"
 do
-    ./installs/pacman-install.sh "$package" | tee -a "$original_dir/logs/pacman_install_log.txt" 2>&1
+    ./installs/pacman-install.sh "$package" | tee -a "$CURR_PATH/logs/pacman_install_log.txt" 2>&1
 done
 
 # Iterate over the packages and run the pacman-install.sh script
 for package in "${yayPackages[@]}"
 do
-    ./installs/yay-install.sh "$package" | tee -a "$original_dir/logs/yay_install_log.txt" 2>&1
+  ./installs/yay-install.sh "$package" | tee -a "$$CURR_PATH/logs/yay_install_log.txt" 2>&1
 done
 
 # Iterate over the packages and run the pacman-install.sh script
 for package in "${flatpakPackages[@]}"
 do
-    ./installs/flatpak-install.sh "$package" | tee -a "$original_dir/logs/flatpak_install_log.txt" 2>&1
+  ./installs/flatpak-install.sh "$package" | tee -a "$CURR_PATH/logs/flatpak_install_log.txt" 2>&1
 done
 
-############################################
-# Custom installations
-
-# Install Rust
-if ! command -v rustup &>/dev/null; then
-  echo "Rustup is not installed. Installing now..."
-  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-  echo "Rustup installation completed."
-else
-  echo "Rustup is already installed."
-fi
-
-# Install NVM
-if [ ! -d "$HOME/.nvm" ]; then
-  echo "NVM is not installed. Installing now..."
-  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
-  echo "NVM installation completed."
-else
-  echo "NVM is already installed."
-fi
-
-# Install Starship prompt
-if ! command -v starship &>/dev/null; then
-  echo "Starship is not installed. Installing now..."
-  curl -sS https://starship.rs/install.sh | sh
-else
-  echo "Starship is already installed."
-fi
+# Iterate over the packages and run the custom installation scripts
+for package in "${customPackages[@]}"
+do
+  echo "Installing $package with script $CURR_PATH/installs/custom/$package/$package.sh..."
+  $CURR_PATH/installs/custom/$package/$package.sh | tee -a "$CURR_PATH/logs/custom_install_log.txt" 2>&1
+done
 
 ############################################
 # add extra finishing steps for packages
