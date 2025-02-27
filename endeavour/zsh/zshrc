@@ -6,7 +6,10 @@ setopt beep extendedglob
 unsetopt autocd notify
 bindkey -e
 # End of lines configured by zsh-newuser-install
+
 # The following lines were added by compinstall
+
+zstyle ':completion:*' verbose true
 zstyle :compinstall filename '/home/stake/.zshrc'
 
 autoload -Uz compinit
@@ -15,15 +18,10 @@ compinit
 # Start starship if not already started
 eval "$(starship init zsh)"
 
-# add neovim to the path
-export PATH="$PATH:/opt/nvim-linux64/bin"
-
 # add scripts folder to my profile
 export PATH="$HOME/.scripts:$PATH"
 
-# source my profile
-source ~/.zsh_profile
-
+# add nvm to my profile
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -33,7 +31,5 @@ export NVM_DIR="$HOME/.nvm"
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 
-# Start tmux automatically if not already in a tmux session
-if [ -z "$TMUX" ]; then
-    exec tmux
-fi
+# source my profile
+source ~/.zsh_profile
