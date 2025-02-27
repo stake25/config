@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=repsrv
+Comment=Cisco VPN for REPSRV environment
+Exec=nohup env GDK_BACKEND=x11 LIBGL_ALWAYS_SOFTWARE=1 WEBKIT_DISABLE_COMPOSITING_MODE=1 /opt/cisco/secureclient/bin/vpnui
+Icon=/home/stake/.local/share/icons/custom/repsrv.png
+Type=Application
+Terminal=false
+Categories=Network;VPN;
+StartupNotify=true
