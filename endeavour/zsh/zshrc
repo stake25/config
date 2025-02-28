@@ -31,5 +31,6 @@ export NVM_DIR="$HOME/.nvm"
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 
-# source my profile
+# source my information
+source ~/.zshenv
 source ~/.zsh_profile

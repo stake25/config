@@ -19,10 +19,12 @@ sudo pacman -Sy # Update the package database
 
 # List of pacman packages to install
 pacmanPackages=(
+  "bitwarden"
   "discord"
   "dosfstools"
   "docker"
   "docker-compose"
+  "firefoxpwa"
   "ntfsprogs"
   "jq"
   "mlocate"
@@ -31,6 +33,8 @@ pacmanPackages=(
   "libevdev"
   "udev"
   "steam"
+  "syncthing"
+  "tailscale"
   "vim"
   "vlc"
   "zsh"
@@ -39,6 +43,7 @@ pacmanPackages=(
 
 yayPackages=(
   "cura-bin"
+  "extension-manager"
   "google-chrome"
   "github-cli-git"
   "lazydocker"
@@ -60,6 +65,7 @@ flatpakPackages=(
 
 customPackages=(
   "rust"
+  "starship"
 )
 
 ############################################
@@ -122,6 +128,10 @@ sudo updatedb
 # Enable and start Tailscale service
 echo "enabling tailscaled"
 sudo systemctl enable --now tailscaled
+
+# Enable and start Syncthing for the current user
+echo "enabling syncthing@$USER"
+sudo systemctl enable --now syncthing@$USER
 
 # Enable and start Docker service
 echo "enabling docker"
