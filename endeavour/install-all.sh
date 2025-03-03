@@ -42,25 +42,27 @@ pacmanPackages=(
 )
 
 yayPackages=(
+  "librewolf-bin"
+  "brave-bin"
   "cura-bin"
   "extension-manager"
   "google-chrome"
   "github-cli-git"
   "lazydocker"
-  "slack-desktop"
   "visual-studio-code-bin"
 )
 
 flatpakPackages=(
   "com.bitwarden.desktop"
-  "com.usebruno.Bruno"
-  "fr.handbrake.ghb"
   "com.github.iwalton3.jellyfin-media-player"
   "com.makemkv.MakeMKV"
+  "com.spotify.Client"
+  "com.system76.Popsicle"
+  "com.usebruno.Bruno"
+  "fr.handbrake.ghb"
   "org.onlyoffice.desktopeditors"
   "org.openrgb.OpenRGB"
-  "com.system76.Popsicle"
-  "com.spotify.Client"
+  "org.signal.Signal"
 )
 
 customPackages=(
@@ -77,6 +79,7 @@ pacmanPackages+=(
 yayPackages+=(
   "teams-for-linux-bin"
   "outlook-for-linux-bin"
+  "slack-desktop"
 )
 
 flatpakPackages+=(
