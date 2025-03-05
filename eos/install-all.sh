@@ -19,50 +19,50 @@ sudo pacman -Sy # Update the package database
 
 # List of pacman packages to install
 pacmanPackages=(
-  "v4l2loopback-dkms"
   "bitwarden"
   "discord"
-  "dosfstools"
-  "docker"
   "docker-compose"
+  "docker"
+  "dosfstools"
   "firefoxpwa"
-  "ntfsprogs"
   "jq"
-  "mlocate"
-  "ranger"
   "lazygit"
   "libevdev"
-  "udev"
+  "mlocate"
+  "ntfsprogs"
+  "ranger"
   "syncthing"
   "tailscale"
+  "udev"
+  "v4l2loopback-dkms"
   "vim"
   "vlc"
-  "zsh"
   "zsh-autosuggestions"
+  "zsh"
 )
 
 yayPackages=(
-  "obs-studio-git"
   "cura-bin"
   "extension-manager"
-  "google-chrome"
   "github-cli-git"
+  "google-chrome"
   "lazydocker"
+  "obs-studio-git"
   "slack-desktop"
   "visual-studio-code-bin"
 )
 
 flatpakPackages=(
-  "org.signal.Signal"
   "com.bitwarden.desktop"
-  "com.usebruno.Bruno"
-  "fr.handbrake.ghb"
   "com.github.iwalton3.jellyfin-media-player"
   "com.makemkv.MakeMKV"
+  "com.spotify.Client"
+  "com.system76.Popsicle"
+  "com.usebruno.Bruno"
+  "fr.handbrake.ghb"
   "org.onlyoffice.desktopeditors"
   "org.openrgb.OpenRGB"
-  "com.system76.Popsicle"
-  "com.spotify.Client"
+  "org.signal.Signal"
 )
 
 customPackages=(
