@@ -19,6 +19,7 @@ sudo pacman -Sy # Update the package database
 
 # List of pacman packages to install
 pacmanPackages=(
+  "v4l2loopback-dkms"
   "bitwarden"
   "discord"
   "dosfstools"
@@ -32,7 +33,6 @@ pacmanPackages=(
   "lazygit"
   "libevdev"
   "udev"
-  "steam"
   "syncthing"
   "tailscale"
   "vim"
@@ -42,6 +42,7 @@ pacmanPackages=(
 )
 
 yayPackages=(
+  "obs-studio-git"
   "cura-bin"
   "extension-manager"
   "google-chrome"
@@ -52,6 +53,7 @@ yayPackages=(
 )
 
 flatpakPackages=(
+  "org.signal.Signal"
   "com.bitwarden.desktop"
   "com.usebruno.Bruno"
   "fr.handbrake.ghb"
@@ -102,7 +104,7 @@ done
 # Iterate over the packages and run the pacman-install.sh script
 for package in "${yayPackages[@]}"
 do
-  ./installs/yay-install.sh "$package" | tee -a "$$CURR_PATH/logs/yay_install_log.txt" 2>&1
+  ./installs/yay-install.sh "$package" | tee -a "$CURR_PATH/logs/yay_install_log.txt" 2>&1
 done
 
 # Iterate over the packages and run the pacman-install.sh script
@@ -153,14 +155,14 @@ fi
 
 # Change the current shell to zsh
 if [ "$SHELL" != "$(which zsh)" ]; then
-    echo "Changing default shell to Zsh..."
+  echo "Changing default shell to Zsh..."
 
-    # Change the default shell to Zsh
-    chsh -s $(which zsh)
+  # Change the default shell to Zsh
+  chsh -s $(which zsh)
 
-    echo "Default shell changed to Zsh. Please log out and log back in for changes to take effect."
+  echo "Default shell changed to Zsh. Please log out and log back in for changes to take effect."
 else
-    echo "Zsh is already the default shell."
+  echo "Zsh is already the default shell."
 fi
 
 # setup udev rules for OpenRGB
