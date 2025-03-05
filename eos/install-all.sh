@@ -74,6 +74,7 @@ customPackages=(
 # add packages for work
 pacmanPackages+=(
   "networkmanager-openconnect"
+  "act"
 )
 
 yayPackages+=(
