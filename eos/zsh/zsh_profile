@@ -1,23 +1,24 @@
 # system aliases
-alias rc="code ~/.zshrc"
-alias profile="code ~/.zsh_profile"
-alias env="code ~/.zshenv"
-alias src="source ~/.zshrc"
-alias ll="ls -lah --color=auto"
-alias ls="ls --color=auto"
+alias rc='code ~/.zshrc'
+alias profile='code ~/.zsh_profile'
+alias env='code ~/.zshenv'
+alias src='source ~/.zshrc'
+alias ll='ls -lah --color=auto'
+alias ls='ls --color=auto'
 
 # navigation
-alias dev="cd ~/development; ranger"
-alias configs="cd ~/development/config"
+alias dev='cd ~/development && ranger'
+alias configs='cd ~/development/config'
+alias eos='cd ~/development/config/eos && code .'
 
 # program aliases
-alias lg="lazygit"
-alias lzd="lazydocker"
-alias ranger="ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR""
-alias notes="code $HOME/syncthing/cloud/Notes"
-alias repsrv="nohup env GDK_BACKEND=x11 LIBGL_ALWAYS_SOFTWARE=1 WEBKIT_DISABLE_COMPOSITING_MODE=1 /opt/cisco/secureclient/bin/vpnui &"
-alias repsrvkill="sudo killall vpnagentd"
+alias lg='lazygit'
+alias lzd='lazydocker'
+alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+alias notes='code $HOME/syncthing/cloud/Notes'
+alias repsrv='nohup env GDK_BACKEND=x11 LIBGL_ALWAYS_SOFTWARE=1 WEBKIT_DISABLE_COMPOSITING_MODE=1 /opt/cisco/secureclient/bin/vpnui &'
+alias repsrvkill='sudo killall vpnagentd'
 
 # ssh aliases
-alias homelab="ssh $HOMELAB"
-alias tunnellab="ssh stake@$HOMELAB -L 18384:localhost:8384"
+alias homelab='ssh $HOMELAB'
+alias tunnellab='ssh stake@$HOMELAB -L 18384:localhost:8384'
