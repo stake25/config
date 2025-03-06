@@ -3,6 +3,8 @@
 ############################################
 # Prerequisites for installation
 
+clear
+
 # get the absolute path to this files directory
 CURR_PATH="$(dirname "$(readlink -f "$0")")"
 echo "Current path: $CURR_PATH"
@@ -99,19 +101,19 @@ mkdir -p "$CURR_PATH/logs"
 # Iterate over the packages and run the pacman-install.sh script
 for package in "${pacmanPackages[@]}"
 do
-    ./installs/pacman-install.sh "$package" | tee -a "$CURR_PATH/logs/pacman_install_log.txt" 2>&1
+    $CURR_PATH/installs/pacman-install.sh "$package" | tee -a "$CURR_PATH/logs/pacman_install_log.txt" 2>&1
 done
 
 # Iterate over the packages and run the pacman-install.sh script
 for package in "${yayPackages[@]}"
 do
-  ./installs/yay-install.sh "$package" | tee -a "$CURR_PATH/logs/yay_install_log.txt" 2>&1
+  $CURR_PATH/installs/yay-install.sh "$package" | tee -a "$CURR_PATH/logs/yay_install_log.txt" 2>&1
 done
 
 # Iterate over the packages and run the pacman-install.sh script
 for package in "${flatpakPackages[@]}"
 do
-  ./installs/flatpak-install.sh "$package" | tee -a "$CURR_PATH/logs/flatpak_install_log.txt" 2>&1
+  $CURR_PATH/installs/flatpak-install.sh "$package" | tee -a "$CURR_PATH/logs/flatpak_install_log.txt" 2>&1
 done
 
 # Iterate over the packages and run the custom installation scripts
@@ -194,16 +196,17 @@ fi
 
 # Run the configuration script for saved scripts
 echo "Configuring saved scripts..."
-./scripts/install.sh
+echo "Current Path: $CURR_PATH"
+$CURR_PATH/scripts/install.sh
 
 # Run the configuration script for Vim
 echo "Configuring Vim..."
-./vim/config.sh
+$CURR_PATH/vim/config.sh
 
 # Run the configuration script for Wallpapers
 echo "Configuring Wallpapers..."
-./wallpaper/config.sh
+$CURR_PATH/wallpaper/install.sh
 
 # Run the configuration script for Zsh
 echo "Configuring Zsh..."
-./zsh/config.sh
+$CURR_PATH/zsh/install.sh

@@ -4,7 +4,7 @@
 CURR_PATH=$(dirname "$(readlink -f "$0")")
 REPO="$CURR_PATH/resources"
 
-echo "$HOME zsh files -> $REPO zsh files"
+echo "$REPO zsh files -> $HOME zsh files"
 
-cp -f "$HOME/.zshrc" "$REPO/zshrc"
-cp -f "$HOME/.zsh_profile" "$REPO/zsh_profile"
+cp -f "$REPO/zshrc" "$HOME/.zshrc" 
+cp -f "$REPO/zsh_profile" "$HOME/.zsh_profile"

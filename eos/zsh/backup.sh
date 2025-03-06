@@ -1,5 +1,6 @@
 #!/bin/bash
 
-cp -f ~/.zshrc ~/.zshrc.bak
-cp -f ~/.zsh_profile ~/.zsh_profile.bak
+echo "ZSH files -> <filename>.bak"
 
+cp -f "$HOME/.zshrc" "$HOME/.zshrc.bak"
+cp -f "$HOME/.zsh_profile" "$HOME/.zsh_profile.bak"
