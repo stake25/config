@@ -27,6 +27,7 @@ pacmanPackages=(
   "docker"
   "dosfstools"
   "firefoxpwa"
+  "flameshot"
   "jq"
   "lazygit"
   "libevdev"
