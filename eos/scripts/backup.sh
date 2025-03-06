@@ -1,4 +1,5 @@
 #!/bin/bash
 
-tar -cvf ~/scripts.bak.tar ~/.scripts
+tar -cvf "$HOME/scripts.bak.tar" "$HOME/.scripts"
 
+echo ".scripts/ -> scripts.bak.tar"

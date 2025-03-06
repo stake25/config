@@ -8,9 +8,9 @@ REPO="$CURR_PATH/wallpapers"
 WALLPAPER="$HOME/Pictures/wallpaper"
 
 # Create the destination directory if it doesn't exist
-mkdir -p "$REPO"
+mkdir -p "$WALLPAPER"
 
 # Find and copy image files
-find "$WALLPAPER" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" -o -iname "*.bmp" \) -exec cp {} "$REPO" \;
+find "$REPO" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" -o -iname "*.bmp" \) -exec cp {} "$WALLPAPER" \;
 
-echo "All image files have been copied to $REPO"
+echo "All image files have been copied to $WALLPAPER"

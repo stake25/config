@@ -1,0 +1,53 @@
+# important variables
+export EOS=$HOME/development/config/eos
+
+# system aliases
+alias rc='code ~/.zshrc'
+alias profile='code ~/.zsh_profile'
+alias env='code ~/.zshenv'
+alias reload='source ~/.zshrc'
+alias ll='ls -lah --color=auto'
+alias ls='ls --color=auto'
+
+# eos aliases
+alias eos="cd $EOS"
+alias eos-edit='eos && code .'
+alias eos-rebuild="$EOS/eos-rebuild.sh"
+
+# zsh aliases
+alias zsh-packup="$EOS/zsh/packup.sh"
+alias zsh-install="$EOS/zsh/install.sh"
+alias zsh-backup="$EOS/zsh/backup.sh"
+alias zsh-restore="$EOS/zsh/restore.sh"
+
+# wallpaper aliases
+alias wallpaper-packup="$EOS/wallpaper/packup.sh"
+alias wallpaper-install="$EOS/wallpaper/install.sh"
+
+# vim aliases
+alias vim-packup="$EOS/vim/packup.sh"
+alias vim-install="$EOS/vim/install.sh"
+alias vim-backup="$EOS/vim/backup.sh"
+alias vim-restore="$EOS/vim/restore.sh"
+
+# scripts aliases
+alias scripts-packup="$EOS/scripts/packup.sh"
+alias scripts-install="$EOS/scripts/install.sh"
+alias scripts-backup="$EOS/scripts/backup.sh"
+alias scripts-restore="$EOS/scripts/restore.sh"
+
+# navigation
+alias dev='cd ~/development && ranger'
+alias configs='cd ~/development/config'
+
+# program aliases
+alias lg='lazygit'
+alias lzd='lazydocker'
+alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+alias notes='code $HOME/syncthing/cloud/Notes'
+alias repsrv='nohup env GDK_BACKEND=x11 LIBGL_ALWAYS_SOFTWARE=1 WEBKIT_DISABLE_COMPOSITING_MODE=1 /opt/cisco/secureclient/bin/vpnui &'
+
+
+# ssh aliases
+alias homelab='ssh $HOMELAB'
+alias tunnellab='ssh stake@$HOMELAB -L 18384:localhost:8384'

@@ -1,4 +1,9 @@
 #!/bin/bash
 
-cp -f ~/.vimrc ~/development/config/popos/vim/vimrc
+# get the absolute path to this files directory
+CURR_PATH=$(dirname "$(readlink -f "$0")")
+REPO="$CURR_PATH/resources"
 
+cp -f "$HOME/.vimrc" "$REPO/vimrc"
+
+echo "$HOME/.vimrc -> $REPO/vimrc"

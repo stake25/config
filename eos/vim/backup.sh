@@ -1,4 +1,5 @@
 #!/bin/bash
 
-cp -f ~/.vimrc ~/.vimrc.bak
+cp -f "$HOME/.vimrc" "$HOME/.vimrc.bak"
 
+echo ".vimrc -> .vimrc.bak"
