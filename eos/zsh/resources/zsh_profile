@@ -25,6 +25,7 @@ alias wallpaper-packup="$EOS/wallpaper/packup.sh"
 alias wallpaper-install="$EOS/wallpaper/install.sh"
 
 # vim aliases
+alias vrc='vim ~/.vimrc'
 alias vim-packup="$EOS/vim/packup.sh"
 alias vim-install="$EOS/vim/install.sh"
 alias vim-backup="$EOS/vim/backup.sh"
