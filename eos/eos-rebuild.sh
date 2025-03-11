@@ -22,6 +22,7 @@ sudo pacman -Sy # Update the package database
 # List of pacman packages to install
 pacmanPackages=(
   "bitwarden"
+  "btop"
   "discord"
   "docker-compose"
   "docker"
@@ -71,6 +72,7 @@ flatpakPackages=(
 customPackages=(
   "rust"
   "starship"
+  "nvm"
 )
 
 ############################################
