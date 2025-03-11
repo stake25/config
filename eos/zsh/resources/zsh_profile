@@ -9,6 +9,11 @@ alias reload='source ~/.zshrc'
 alias ll='ls -lah --color=auto'
 alias ls='ls --color=auto'
 
+# python aliases/functions
+pip() {
+    sudo pacman -S python-$1
+}
+
 # eos aliases
 alias eos="cd $EOS"
 alias eos-edit='eos && code .'
@@ -47,7 +52,7 @@ alias lzd='lazydocker'
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias notes='code $HOME/syncthing/cloud/Notes'
 alias repsrv='nohup env GDK_BACKEND=x11 LIBGL_ALWAYS_SOFTWARE=1 WEBKIT_DISABLE_COMPOSITING_MODE=1 /opt/cisco/secureclient/bin/vpnui &'
-
+alias repsrvkill='sudo killall vpnui && sudo killall vpnagentd'
 
 # ssh aliases
 alias homelab='ssh $HOMELAB'
