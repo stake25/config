@@ -31,8 +31,8 @@ for file in $source_dir/*.aax; do
     fi
 
     if [ -f "$dest_dir/$book_name.m4a" ]; then
-        echo "File already exists. Exiting."
-        exit 1
+        echo "File already exists. Skipping."
+        continue
     fi
 
     # Get the checksum to calculate the activation_bytes
