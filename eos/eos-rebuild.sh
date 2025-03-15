@@ -61,6 +61,7 @@ yayPackages=(
   "obs-studio-git"
   "slack-desktop"
   "visual-studio-code-bin"
+  "waterfox-bin"
 )
 
 flatpakPackages=(

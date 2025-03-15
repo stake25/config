@@ -16,7 +16,7 @@ pip() {
 
 # eos aliases
 alias eos="cd $EOS"
-alias eos-edit='eos && code .'
+alias eos-edit="code $EOS"
 alias eos-rebuild="$EOS/eos-rebuild.sh"
 
 # zsh aliases
