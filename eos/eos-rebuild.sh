@@ -10,11 +10,16 @@ CURR_PATH="$(dirname "$(readlink -f "$0")")"
 echo "Current path: $CURR_PATH"
 
 # enable multilib repository
-echo "Enabling multilib repository..."
-sudo cp /etc/pacman.conf /etc/pacman.conf.bak # Backup the current pacman.conf
-sudo sed -i '/^\[multilib\]/,/^#/{s/^#//; s/^#//;}' /etc/pacman.conf # Uncomment the multilib section in pacman.conf
-sudo sed -i '/^\[multilib\]/,/^#/{s/^#//; /^Include/!d;}' /etc/pacman.conf # Uncomment the lines under multilib (packages)
-sudo pacman -Sy # Update the package database
+echo "Checking if multilib repository is enabled..."
+if ! grep -q '^\[multilib\]' /etc/pacman.conf || grep -q '^\[multilib\]' /etc/pacman.conf | grep -q '^#'; then
+  echo "Enabling multilib repository..."
+  sudo cp /etc/pacman.conf /etc/pacman.conf.bak # Backup the current pacman.conf
+  sudo sed -i '/^\[multilib\]/,/^#/{s/^#//; s/^#//;}' /etc/pacman.conf # Uncomment the multilib section in pacman.conf
+  sudo sed -i '/^\[multilib\]/,/^#/{s/^#//; /^Include/!d;}' /etc/pacman.conf # Uncomment the lines under multilib (packages)
+  sudo pacman -Sy # Update the package database
+else
+  echo "Multilib repository is already enabled."
+fi
 
 ###########################################
 # store and list all the packages to install
@@ -22,12 +27,13 @@ sudo pacman -Sy # Update the package database
 # List of pacman packages to install
 pacmanPackages=(
   "bitwarden"
+  "bluez-utils"
+  "bluez"
   "btop"
   "discord"
   "docker-compose"
   "docker"
   "dosfstools"
-  "firefoxpwa"
   "flameshot"
   "jq"
   "lazygit"
@@ -41,6 +47,7 @@ pacmanPackages=(
   "v4l2loopback-dkms"
   "vim"
   "vlc"
+  "xclip"
   "zsh-autosuggestions"
   "zsh"
 )
