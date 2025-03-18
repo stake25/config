@@ -1,17 +1,21 @@
 {
     "cSpell.words": [
+        "appimage",
         "bitwarden",
         "bluez",
         "btop",
         "cura",
         "desktopeditors",
+        "dkms",
         "dosfstools",
         "flameshot",
         "getent",
         "iwalton",
         "jellyfin",
+        "lazydocker",
         "lazygit",
         "libevdev",
+        "logseq",
         "makemkv",
         "mlocate",
         "multilib",
@@ -30,6 +34,8 @@
         "updatedb",
         "usebruno",
         "usermod",
-        "xclip"
+        "waterfox",
+        "xclip",
+        "ytdlp"
     ]
 }

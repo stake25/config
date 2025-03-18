@@ -48,6 +48,7 @@ pacmanPackages=(
   "vim"
   "vlc"
   "xclip"
+  "yt-dlp"
   "zsh-autosuggestions"
   "zsh"
 )
@@ -58,8 +59,10 @@ yayPackages=(
   "github-cli-git"
   "google-chrome"
   "lazydocker"
+  "logseq-desktop-bin"
   "obs-studio-git"
   "slack-desktop"
+  "todoist-appimage"
   "visual-studio-code-bin"
   "waterfox-bin"
 )
