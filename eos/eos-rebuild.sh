@@ -52,7 +52,7 @@ pacmanPackages=(
   "xclip"
   "yt-dlp"
   "zsh-autosuggestions"
-  "zsh"
+  "zsh"  
 )
 
 yayPackages=(
@@ -92,6 +92,7 @@ customPackages=(
 pacmanPackages+=(
   "networkmanager-openconnect"
   "act"
+  "openldap"
 )
 
 yayPackages+=(
@@ -105,6 +106,7 @@ flatpakPackages+=(
 
 customPackages+=(
   "repsrv-vpn"
+  "opslevel"
 )
 
 ############################################
