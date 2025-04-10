@@ -41,6 +41,8 @@ pacmanPackages=(
   "mlocate"
   "ntfsprogs"
   "obs-studio"
+  "podman-compose"
+  "podman"
   "ranger"
   "syncthing"
   "tailscale"
@@ -52,11 +54,17 @@ pacmanPackages=(
   "xclip"
   "yt-dlp"
   "zsh-autosuggestions"
-  "zsh"  
+  "zsh"
+  "make"
+  "pip"
+  "python"
+  "ripgrep"
 )
 
 yayPackages=(
+  "neovim-git"
   "cura-bin"
+  "downgrade"
   "extension-manager"
   "github-cli-git"
   "google-chrome"
@@ -76,15 +84,18 @@ flatpakPackages=(
   "com.system76.Popsicle"
   "com.usebruno.Bruno"
   "fr.handbrake.ghb"
+  "io.podman_desktop.PodmanDesktop"
   "org.onlyoffice.desktopeditors"
   "org.openrgb.OpenRGB"
   "org.signal.Signal"
+  "com.brave.Browser"
 )
 
 customPackages=(
   "rust"
   "starship"
   "nvm"
+  "lunarvim"
 )
 
 ############################################
