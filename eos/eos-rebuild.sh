@@ -26,6 +26,8 @@ fi
 
 # List of pacman packages to install
 pacmanPackages=(
+  "nerd-fonts"
+  "alacritty"
   "bitwarden"
   "bluez-utils"
   "bluez"
@@ -38,12 +40,17 @@ pacmanPackages=(
   "jq"
   "lazygit"
   "libevdev"
+  "make"
   "mlocate"
+  "noto-fonts-emoji"
   "ntfsprogs"
   "obs-studio"
+  "pip"
   "podman-compose"
   "podman"
+  "python"
   "ranger"
+  "ripgrep"
   "syncthing"
   "tailscale"
   "tree"
@@ -55,13 +62,10 @@ pacmanPackages=(
   "yt-dlp"
   "zsh-autosuggestions"
   "zsh"
-  "make"
-  "pip"
-  "python"
-  "ripgrep"
 )
 
 yayPackages=(
+  "nerd-fonts-jetbrains-mono"
   "neovim-git"
   "cura-bin"
   "downgrade"
@@ -89,6 +93,7 @@ flatpakPackages=(
   "org.openrgb.OpenRGB"
   "org.signal.Signal"
   "com.brave.Browser"
+  "com.jeffser.Alpaca"
 )
 
 customPackages=(
@@ -238,3 +243,7 @@ $CURR_PATH/wallpaper/install.sh
 # Run the configuration script for Zsh
 echo "Configuring Zsh..."
 $CURR_PATH/zsh/install.sh
+
+# Run the configuration script for Alacritty
+echo "Configuring Alacritty..."
+$CURR_PATH/alacritty/install.sh
