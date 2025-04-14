@@ -26,6 +26,7 @@ fi
 
 # List of pacman packages to install
 pacmanPackages=(
+  "timeshift"
   "nerd-fonts"
   "alacritty"
   "bitwarden"
@@ -94,6 +95,7 @@ flatpakPackages=(
   "org.signal.Signal"
   "com.brave.Browser"
   "com.jeffser.Alpaca"
+  "com.heroicgameslauncher.hgl"
 )
 
 customPackages=(
