@@ -13,10 +13,10 @@ echo "Current path: $CURR_PATH"
 echo "Checking if multilib repository is enabled..."
 if ! grep -q '^\[multilib\]' /etc/pacman.conf || grep -q '^\[multilib\]' /etc/pacman.conf | grep -q '^#'; then
   echo "Enabling multilib repository..."
-  sudo cp /etc/pacman.conf /etc/pacman.conf.bak # Backup the current pacman.conf
-  sudo sed -i '/^\[multilib\]/,/^#/{s/^#//; s/^#//;}' /etc/pacman.conf # Uncomment the multilib section in pacman.conf
+  sudo cp /etc/pacman.conf /etc/pacman.conf.bak                              # Backup the current pacman.conf
+  sudo sed -i '/^\[multilib\]/,/^#/{s/^#//; s/^#//;}' /etc/pacman.conf       # Uncomment the multilib section in pacman.conf
   sudo sed -i '/^\[multilib\]/,/^#/{s/^#//; /^Include/!d;}' /etc/pacman.conf # Uncomment the lines under multilib (packages)
-  sudo pacman -Sy # Update the package database
+  sudo pacman -Sy                                                            # Update the package database
 else
   echo "Multilib repository is already enabled."
 fi
@@ -37,7 +37,6 @@ pacmanPackages=(
   "docker-compose"
   "docker"
   "dosfstools"
-  "flameshot"
   "jq"
   "lazygit"
   "libevdev"
@@ -96,13 +95,13 @@ flatpakPackages=(
   "com.brave.Browser"
   "com.jeffser.Alpaca"
   "com.heroicgameslauncher.hgl"
+  "ar.com.tuxguitar.TuxGuitar"
 )
 
 customPackages=(
   "rust"
   "starship"
   "nvm"
-  "lunarvim"
 )
 
 ############################################
@@ -134,26 +133,22 @@ customPackages+=(
 mkdir -p "$CURR_PATH/logs"
 
 # Iterate over the packages and run the pacman-install.sh script
-for package in "${pacmanPackages[@]}"
-do
-    $CURR_PATH/installs/pacman-install.sh "$package" | tee -a "$CURR_PATH/logs/pacman_install_log.txt" 2>&1
+for package in "${pacmanPackages[@]}"; do
+  $CURR_PATH/installs/pacman-install.sh "$package" | tee -a "$CURR_PATH/logs/pacman_install_log.txt" 2>&1
 done
 
 # Iterate over the packages and run the pacman-install.sh script
-for package in "${yayPackages[@]}"
-do
+for package in "${yayPackages[@]}"; do
   $CURR_PATH/installs/yay-install.sh "$package" | tee -a "$CURR_PATH/logs/yay_install_log.txt" 2>&1
 done
 
 # Iterate over the packages and run the pacman-install.sh script
-for package in "${flatpakPackages[@]}"
-do
+for package in "${flatpakPackages[@]}"; do
   $CURR_PATH/installs/flatpak-install.sh "$package" | tee -a "$CURR_PATH/logs/flatpak_install_log.txt" 2>&1
 done
 
 # Iterate over the packages and run the custom installation scripts
-for package in "${customPackages[@]}"
-do
+for package in "${customPackages[@]}"; do
   echo "Installing $package with script $CURR_PATH/installs/custom/$package/$package.sh..."
   $CURR_PATH/installs/custom/$package/$package.sh | tee -a "$CURR_PATH/logs/custom_install_log.txt" 2>&1
 done
@@ -179,7 +174,7 @@ sudo systemctl enable --now docker
 
 # enable the current user to use docker
 # Check if the docker group exists, if not, create it
-if ! getent group docker > /dev/null; then
+if ! getent group docker >/dev/null; then
   echo "Creating docker group..."
   sudo groupadd docker
 fi
@@ -232,11 +227,11 @@ fi
 # Run the configuration script for saved scripts
 echo "Configuring saved scripts..."
 echo "Current Path: $CURR_PATH"
-$CURR_PATH/scripts/install.sh
+$CURR_PATH/config/scripts/install.sh
 
 # Run the configuration script for Vim
 echo "Configuring Vim..."
-$CURR_PATH/vim/config.sh
+$CURR_PATH/config/vim/config.sh
 
 # Run the configuration script for Wallpapers
 echo "Configuring Wallpapers..."
@@ -244,8 +239,8 @@ $CURR_PATH/wallpaper/install.sh
 
 # Run the configuration script for Zsh
 echo "Configuring Zsh..."
-$CURR_PATH/zsh/install.sh
+$CURR_PATH/config/zsh/install.sh
 
 # Run the configuration script for Alacritty
 echo "Configuring Alacritty..."
-$CURR_PATH/alacritty/install.sh
+$CURR_PATH/config/alacritty/install.sh

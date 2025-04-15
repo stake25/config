@@ -32,6 +32,12 @@ export NVM_DIR="$HOME/.nvm"
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 
+# Exit the shell if tmux exits
+if [ -z "$TMUX" ]; then
+  tmux attach-session -t main || tmux new-session -s main
+  exit  # <-- This closes the shell after tmux exits
+fi
+
 # source my information
 source ~/.zshenv
 source ~/.zsh_profile

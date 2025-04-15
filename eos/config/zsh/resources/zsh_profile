@@ -1,11 +1,12 @@
 # important variables
 export EOS=$HOME/development/config/eos
-DEFAULT_EDITOR="lvim"
+export EDITOR=nvim
+export VISUAL=nvim
 
 # system aliases
-alias rc="$DEFAULT_EDITOR ~/.zshrc"
-alias profile="$DEFAULT_EDITOR ~/.zsh_profile"
-alias env="$DEFAULT_EDITOR ~/.zshenv"
+alias rc="$EDITOR ~/.zshrc"
+alias profile="$EDITOR ~/.zsh_profile"
+alias env="$EDITOR ~/.zshenv"
 alias reload='source ~/.zshrc'
 alias ll='ls -lah --color=auto'
 alias ls='ls --color=auto'
@@ -18,7 +19,7 @@ pip() {
 
 # eos aliases
 alias eos="cd $EOS"
-alias eos-edit="eos; $DEFAULT_EDITOR ."
+alias eos-edit="eos; $EDITOR ."
 alias eos-rebuild="$EOS/eos-rebuild.sh"
 
 # zsh aliases
@@ -55,6 +56,8 @@ alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir
 alias notes='code $HOME/syncthing/cloud/Notes'
 alias repsrv='nohup env GDK_BACKEND=x11 LIBGL_ALWAYS_SOFTWARE=1 WEBKIT_DISABLE_COMPOSITING_MODE=1 /opt/cisco/secureclient/bin/vpnui &'
 alias repsrvkill='sudo killall vpnui && sudo killall vpnagentd'
+alias vim="nvim"
+alias nconfig="cd ~/.config/nvim/; vim ."
 
 # ssh aliases
 alias homelab='ssh $HOMELAB'
